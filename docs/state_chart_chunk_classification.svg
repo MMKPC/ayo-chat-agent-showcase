@@ -1,0 +1,72 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">State chart of a chunk's classification lifecycle in the AYO Chat Agent v1 categorizer</title>
+<desc id="desc">A chunk moves from Unscored to Scoring, then branches to Categorized or Uncategorized based on whether the best strategy score is greater than zero, ending in a final state</desc>
+<style>
+  .state-box { fill: #f8fafc; stroke: #64748b; stroke-width: 1.5; rx: 10; }
+  .state-title { font: 700 14px system-ui, sans-serif; fill: #1e293b; text-anchor: middle; }
+  .state-sub { font: 12px system-ui, sans-serif; fill: #64748b; text-anchor: middle; }
+  .state-divider { stroke: #64748b; stroke-width: 1; }
+  .trans-line { stroke: #475569; stroke-width: 1.5; fill: none; }
+  .trans-label { font: 12px system-ui, sans-serif; fill: #1e293b; text-anchor: middle; }
+  .guard-label { font: 600 12px 'SF Mono', Consolas, monospace; fill: #b45309; text-anchor: middle; }
+  .diagram-title { font: 700 17px system-ui, sans-serif; fill: #1e293b; text-anchor: middle; }
+</style>
+
+<defs>
+  <marker id="stateArrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="900" height="620" fill="#ffffff"/>
+
+<text class="diagram-title" x="450" y="24">State Chart: Chunk Classification Lifecycle (AYO Chat Agent v1 Categorizer)</text>
+
+<!-- initial state -->
+<circle cx="450" cy="60" r="8" fill="#1e293b"/>
+<line class="trans-line" x1="450" y1="68" x2="450" y2="96" marker-end="url(#stateArrow)"/>
+
+<!-- Unscored -->
+<rect class="state-box" x="360" y="96" width="180" height="46" rx="10"/>
+<text class="state-title" x="450" y="124">Unscored</text>
+
+<line class="trans-line" x1="450" y1="142" x2="450" y2="180" marker-end="url(#stateArrow)"/>
+<text class="trans-label" x="540" y="165">categorize(chunk_text)</text>
+
+<!-- Scoring -->
+<rect class="state-box" x="330" y="180" width="240" height="72" rx="10"/>
+<text class="state-title" x="450" y="203">Scoring</text>
+<line class="state-divider" x1="330" y1="213" x2="570" y2="213"/>
+<text class="state-sub" x="450" y="232">do / call score(chunk_text)</text>
+<text class="state-sub" x="450" y="246">on each strategy</text>
+
+<!-- branch to Uncategorized (left) -->
+<path class="trans-line" d="M 380,252 C 320,290 230,300 200,330" marker-end="url(#stateArrow)"/>
+<text class="guard-label" x="230" y="290">[best_score == 0]</text>
+
+<!-- branch to Categorized (right) -->
+<path class="trans-line" d="M 520,252 C 590,290 660,300 690,330" marker-end="url(#stateArrow)"/>
+<text class="guard-label" x="660" y="290">[best_score &gt; 0]</text>
+
+<!-- Uncategorized box -->
+<rect class="state-box" x="90" y="330" width="220" height="60" rx="10"/>
+<text class="state-title" x="200" y="365">Uncategorized</text>
+
+<!-- Categorized box -->
+<rect class="state-box" x="580" y="330" width="240" height="82" rx="10"/>
+<text class="state-title" x="700" y="356">Categorized</text>
+<line class="state-divider" x1="580" y1="366" x2="820" y2="366"/>
+<text class="state-sub" x="700" y="384">entry / category_name =</text>
+<text class="state-sub" x="700" y="398">best_strategy.category_name</text>
+
+<!-- converge to final -->
+<path class="trans-line" d="M 200,390 C 200,460 400,470 440,478" marker-end="url(#stateArrow)"/>
+<path class="trans-line" d="M 700,412 C 700,470 500,470 460,478" marker-end="url(#stateArrow)"/>
+
+<!-- final state -->
+<circle cx="450" cy="500" r="13" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+<circle cx="450" cy="500" r="7" fill="#1e293b"/>
+
+<text class="state-sub" x="450" y="540">Both Categorized and Uncategorized are terminal states for a given chunk.</text>
+
+</svg>

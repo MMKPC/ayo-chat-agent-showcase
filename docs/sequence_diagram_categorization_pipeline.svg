@@ -1,0 +1,98 @@
+<svg viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">Sequence diagram of the AYO Chat Agent v1 categorization pipeline</title>
+<desc id="desc">main() creates strategy instances and a Categorizer, calls categorize which loops calling score on each strategy, then main creates a MarkdownProductionMapAssembler and calls assemble</desc>
+<style>
+  .lifeline-box { fill: #f8fafc; stroke: #64748b; stroke-width: 1.5; }
+  .lifeline-text { font: 600 13px system-ui, sans-serif; fill: #1e293b; text-anchor: middle; }
+  .lifeline-dash { stroke: #475569; stroke-width: 1.2; stroke-dasharray: 4,4; }
+  .activation { fill: #e2e8f0; stroke: #64748b; stroke-width: 1.2; }
+  .msg-solid { stroke: #475569; stroke-width: 1.5; fill: none; }
+  .msg-dashed { stroke: #475569; stroke-width: 1.3; stroke-dasharray: 4,3; fill: none; }
+  .msg-label { font: 12px system-ui, sans-serif; fill: #1e293b; }
+  .msg-label-em { font: italic 11.5px system-ui, sans-serif; fill: #64748b; }
+  .frame-box { fill: none; stroke: #94a3b8; stroke-width: 1.3; }
+  .frame-tab { fill: #eef2f7; stroke: #94a3b8; stroke-width: 1.3; }
+  .frame-label { font: 600 11px system-ui, sans-serif; fill: #1e293b; }
+  .diagram-title { font: 700 17px system-ui, sans-serif; fill: #1e293b; text-anchor: middle; }
+</style>
+
+<defs>
+  <marker id="solidArrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+  </marker>
+  <marker id="openArrow" markerWidth="12" markerHeight="10" refX="9" refY="5" orient="auto">
+    <path d="M0,0 L9,5 L0,10" fill="none" stroke="#475569" stroke-width="1.3"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1000" height="640" fill="#ffffff"/>
+
+<text class="diagram-title" x="500" y="18">Sequence Diagram: Categorization Pipeline (AYO Chat Agent v1)</text>
+
+<!-- Lifeline headers -->
+<rect class="lifeline-box" x="20" y="35" width="150" height="38"/>
+<text class="lifeline-text" x="95" y="59">main() : CLI</text>
+
+<rect class="lifeline-box" x="290" y="35" width="150" height="38"/>
+<text class="lifeline-text" x="365" y="59">:Categorizer</text>
+
+<rect class="lifeline-box" x="560" y="35" width="160" height="38"/>
+<text class="lifeline-text" x="640" y="59">:CategoryStrategy</text>
+
+<rect class="lifeline-box" x="810" y="35" width="170" height="38"/>
+<text class="lifeline-text" x="895" y="52">:MarkdownProduction</text>
+<text class="lifeline-text" x="895" y="66">MapAssembler</text>
+
+<!-- lifelines -->
+<line class="lifeline-dash" x1="95" y1="73" x2="95" y2="600"/>
+<line class="lifeline-dash" x1="365" y1="73" x2="365" y2="600"/>
+<line class="lifeline-dash" x1="640" y1="73" x2="640" y2="600"/>
+<line class="lifeline-dash" x1="895" y1="73" x2="895" y2="600"/>
+
+<!-- 1. create strategies -->
+<line class="msg-solid" x1="95" y1="100" x2="636" y2="100" marker-end="url(#solidArrow)"/>
+<text class="msg-label" x="105" y="95">«create» CharacterStrategy(), WorldLoreStrategy(),</text>
+<text class="msg-label" x="105" y="110">AbilityStrategy(), StoryStrategy()</text>
+
+<!-- 2. create categorizer -->
+<line class="msg-solid" x1="95" y1="140" x2="361" y2="140" marker-end="url(#solidArrow)"/>
+<text class="msg-label" x="105" y="134">«create» Categorizer(strategies)</text>
+
+<!-- 3. categorize call, activation starts -->
+<rect class="activation" x="360" y="160" width="10" height="230"/>
+<line class="msg-solid" x1="95" y1="160" x2="360" y2="160" marker-end="url(#solidArrow)"/>
+<text class="msg-label" x="105" y="154">categorize(cleaned_summary)</text>
+
+<!-- loop frame -->
+<rect class="frame-box" x="345" y="185" width="330" height="110"/>
+<path class="frame-tab" d="M345,185 h60 v14 l-8,8 h-52 Z"/>
+<text class="frame-label" x="352" y="197">loop</text>
+<text class="msg-label-em" x="415" y="197">for each strategy</text>
+
+<rect class="activation" x="635" y="215" width="10" height="35"/>
+<line class="msg-solid" x1="370" y1="215" x2="635" y2="215" marker-end="url(#solidArrow)"/>
+<text class="msg-label" x="410" y="209">score(chunk_text)</text>
+
+<line class="msg-dashed" x1="635" y1="255" x2="370" y2="255" marker-end="url(#openArrow)"/>
+<text class="msg-label-em" x="410" y="249">return score</text>
+
+<!-- return category_name -->
+<line class="msg-dashed" x1="360" y1="360" x2="96" y2="360" marker-end="url(#openArrow)"/>
+<text class="msg-label-em" x="120" y="354">return category_name</text>
+
+<!-- create assembler -->
+<line class="msg-solid" x1="95" y1="420" x2="891" y2="420" marker-end="url(#solidArrow)"/>
+<text class="msg-label" x="105" y="414">«create» MarkdownProductionMapAssembler()</text>
+
+<!-- assemble call -->
+<rect class="activation" x="890" y="450" width="10" height="60"/>
+<line class="msg-solid" x1="95" y1="450" x2="890" y2="450" marker-end="url(#solidArrow)"/>
+<text class="msg-label" x="105" y="444">assemble(categorized_chunks)</text>
+
+<line class="msg-dashed" x1="890" y1="505" x2="96" y2="505" marker-end="url(#openArrow)"/>
+<text class="msg-label-em" x="500" y="499">return production_map</text>
+
+<!-- activation for main's outer call -->
+<rect class="activation" x="90" y="160" width="10" height="360" opacity="0.55"/>
+
+</svg>

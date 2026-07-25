@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Evidence | AYO Chat Agent v1</title>
+    <meta name="description" content="Milestone video evidence for AYO Chat Agent v1.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <div class="brand">AYO Chat Agent v1</div>
+        <nav class="nav-links" aria-label="Portfolio links">
+          <a href="index.html">Overview</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="diagrams.html">Diagrams</a>
+          <a href="video-evidence.html">Videos</a>
+          <a href="download.html">Download Demo</a>
+          <a href="demo-script.html">Demo Script</a>
+          <a href="mailto:memitchell@mmkpcstudios.com?subject=AYO%20Chat%20Agent%20source%20review">Source Review</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Milestone video evidence</p>
+          <h1>Four walkthroughs that prove the system was built and tested.</h1>
+          <p class="lead">The videos are long-form engineering proof. Chapters, titles, and thumbnails are mapped from the transcripts so the recordings read as one cohesive software development case study.</p>
+          <p class="caption">Some earlier recordings show the underlying CLI milestone path. The current public demo package now ships as a simple Windows desktop app built on that same shared pipeline.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap video-grid">
+          <a class="video-poster" href="https://youtu.be/tCJJVlSK87w" aria-label="Open the final build walkthrough on YouTube">
+            <img src="assets/thumb-04-final-build.png" alt="AYO Chat Agent v1 final build video thumbnail">
+            <span>Open Main Walkthrough</span>
+          </a>
+          <article class="card">
+            <img class="media thumbnail" src="assets/thumb-04-final-build.png" alt="AYO Chat Agent v1 final build YouTube thumbnail">
+            <h2>Final Build and Local AI Document Pipeline</h2>
+            <p>Final milestone walkthrough showing the document loader, chunker, response verifier, build flow, and end-to-end behavior.</p>
+            <p><a href="https://youtu.be/tCJJVlSK87w">Open on YouTube</a></p>
+            <pre class="chapter-block">00:00 Final milestone intro and runtime note
+00:50 Clean build setup
+01:24 PyInstaller build stages
+02:05 Running EXE against sample document
+02:34 Loader guard clauses
+03:21 Chunker walkthrough
+03:45 Response verifier behavior
+04:34 Production map output review
+05:39 CLI exception handling
+06:27 Python path and import hurdle
+07:21 Categorizer scoring limitation
+08:07 Empty sample and cache behavior
+09:08 End-to-end pipeline summary
+09:29 Future GDD and code breakdown direction</pre>
+            <p class="caption">Use this as the main public proof video.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Supporting Videos</h2>
+          <div class="grid three">
+            <article class="card">
+              <img class="media thumbnail" src="assets/thumb-02-strategy-map.png" alt="AYO Chat Agent v1 Strategy Pattern YouTube thumbnail">
+              <h3>Strategy Pattern Categorizer and Production Map</h3>
+              <p>Shows categorization architecture and production-map assembly.</p>
+              <p><a href="https://youtu.be/JqT-QNq3KSI">Open video</a></p>
+              <pre class="chapter-block">00:00 Milestone 2 overview and rename note
+00:57 Strategy Pattern file walkthrough
+01:28 DRY principle and pull-up method
+02:05 Choosing game design categories
+02:28 Strategy script smoke test
+03:06 Categorizer fallback behavior
+03:49 Weighted category scoring
+04:48 Production map assembly
+05:14 Unknown category fallback issue
+06:20 Wiring the CLI pipeline
+06:55 Running the full prompt pipeline
+07:44 First categorized production map output
+08:25 Re-running to compare model output
+09:04 Backlog for richer summaries
+09:49 Multi-context prompt test
+10:23 Uncategorized fallback debug result
+11:25 PyInstaller build and EXE package
+12:23 Successful EXE build and UI next step</pre>
+            </article>
+            <article class="card">
+              <img class="media thumbnail" src="assets/thumb-03-testing.png" alt="AYO Chat Agent v1 test suite YouTube thumbnail">
+              <h3>Unit and Integration Testing</h3>
+              <p>Shows automated testing, fail/pass thinking, and validation behavior.</p>
+              <p><a href="https://youtu.be/iyTBCO7R8f4">Open video</a></p>
+              <pre class="chapter-block">00:00 Testing walkthrough overview
+00:37 Character category fail/pass test
+02:07 World lore case-sensitive test
+03:02 Abilities category fail/pass test
+03:47 Story category fail/pass test
+04:32 Uncategorized score fallback test
+06:06 Missing strategy value error test
+07:21 Production map section title test
+08:34 Unknown category routing test
+09:26 Explicit uncategorized bucket test
+10:38 Empty chunk normalization test
+12:16 Production map title fallback test
+13:30 Full test suite pass
+13:51 Dependency failure demonstration
+14:45 Restoring the system and final pass</pre>
+            </article>
+            <article class="card">
+              <img class="media thumbnail" src="assets/thumb-01-ollama-cli.png" alt="AYO Chat Agent v1 local AI CLI YouTube thumbnail">
+              <h3>Local AI CLI with Ollama and Phi-3</h3>
+              <p>Shows the local AI workflow running through the command line.</p>
+              <p><a href="https://youtu.be/eq32Ek8xiZk">Open video</a></p>
+              <pre class="chapter-block">00:00 Intro and project purpose
+00:42 Current CLI and EXE scope
+01:07 Requirements and setup notes
+01:56 Ollama provider walkthrough
+02:50 Built-in provider test prompt
+03:29 Checking local Ollama models
+03:56 Running the provider directly
+04:40 First Phi-3 response
+05:02 Testing the CLI path
+06:31 Fixing prompt argument formatting
+08:04 Reviewing prompt drift
+08:55 Improving the prompt
+10:29 Graceful Ollama connection failure
+11:35 Restarting Ollama
+12:00 Running after cold boot
+12:33 Future cache and consistency goals</pre>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Contact Sheets</h2>
+          <div class="grid two">
+            <figure>
+              <img class="media" src="assets/final-milestone-contact-sheet.png" alt="Contact sheet from the final milestone walkthrough">
+              <figcaption class="caption">Final milestone walkthrough.</figcaption>
+            </figure>
+            <figure>
+              <img class="media" src="assets/testing-walkthrough-contact-sheet.png" alt="Contact sheet from the testing walkthrough">
+              <figcaption class="caption">Testing walkthrough.</figcaption>
+            </figure>
+            <figure>
+              <img class="media" src="assets/strategy-production-map-contact-sheet.png" alt="Contact sheet from the Strategy Pattern walkthrough">
+              <figcaption class="caption">Strategy Pattern and production map walkthrough.</figcaption>
+            </figure>
+            <figure>
+              <img class="media" src="assets/ollama-cli-contact-sheet.png" alt="Contact sheet from the Ollama CLI walkthrough">
+              <figcaption class="caption">Ollama and Phi-3 CLI walkthrough.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>YouTube Titles and Metadata</h2>
+          <p class="muted">The public page already includes the chapter structure and review order. Internal title and description drafts are kept private so the showcase proves the work without exposing the full packaging process.</p>
+          <div class="grid two" style="margin-top: 18px;">
+            <article class="card">
+              <h3>Reviewer path</h3>
+              <p>Start with the final milestone video, then use the Strategy Pattern and testing videos for deeper proof.</p>
+            </article>
+            <article class="card">
+              <h3>Short demo</h3>
+              <p>The 60-90 second narration and shot list are ready in <a href="demo-script.html">demo-script.html</a> for a LinkedIn or job-application version.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">Built by Matthew Mitchell - MMKPC Studios</div>
+    </footer>
+    <script src="site.js"></script>
+  </body>
+</html>

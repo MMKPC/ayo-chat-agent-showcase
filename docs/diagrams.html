@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diagrams | AYO Chat Agent v1</title>
+    <meta name="description" content="Generated UML diagrams and original architecture evidence for AYO Chat Agent v1.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <div class="brand">AYO Chat Agent v1</div>
+        <nav class="nav-links" aria-label="Portfolio links">
+          <a href="index.html">Overview</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="diagrams.html">Diagrams</a>
+          <a href="video-evidence.html">Videos</a>
+          <a href="download.html">Download Demo</a>
+          <a href="demo-script.html">Demo Script</a>
+          <a href="mailto:memitchell@mmkpcstudios.com?subject=AYO%20Chat%20Agent%20source%20review">Source Review</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Architecture evidence</p>
+          <h1>Clean UML first, original exports second.</h1>
+          <p class="lead">This page shows generated diagrams for presentation clarity, then preserves the original class exports as supporting artifacts.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Generated UML</h2>
+          <div class="grid two">
+            <article class="diagram-panel">
+              <h3>Processing Sequence</h3>
+              <pre class="mermaid">
+sequenceDiagram
+  actor User
+  participant DesktopApp
+  participant Loader
+  participant Chunker
+  participant OllamaProvider
+  participant Verifier
+  participant Categorizer
+  participant ProductionMap
+  User->>DesktopApp: Choose design text and start generation
+  DesktopApp->>Loader: Load and normalize source text
+  Loader-->>DesktopApp: Clean document text
+  DesktopApp->>Chunker: Split document into chunks
+  Chunker-->>DesktopApp: Chunk list
+  loop For each chunk
+    DesktopApp->>OllamaProvider: Summarize chunk with local model
+    OllamaProvider-->>DesktopApp: Generated summary
+    DesktopApp->>Verifier: Validate summary
+    Verifier-->>DesktopApp: Accept or fallback
+    DesktopApp->>Categorizer: Classify useful content
+    Categorizer-->>DesktopApp: Production category
+  end
+  DesktopApp->>ProductionMap: Assemble categorized notes
+  ProductionMap-->>User: Markdown production map
+              </pre>
+              <p class="caption">Shows the core user-to-output workflow without exposing private prompt details.</p>
+            </article>
+
+            <article class="diagram-panel">
+              <h3>Strategy Pattern Class View</h3>
+              <pre class="mermaid">
+classDiagram
+  class Categorizer
+  Categorizer : -strategies
+  Categorizer : +categorize(text)
+  class CategoryStrategy
+  CategoryStrategy : +score(text)
+  CategoryStrategy : +categoryName
+  class CharacterStrategy
+  class MechanicsStrategy
+  class WorldLevelStrategy
+  class StoryStrategy
+  class UIStrategy
+  class SystemsStrategy
+  class UncategorizedStrategy
+  Categorizer --> CategoryStrategy
+  CategoryStrategy <|.. CharacterStrategy
+  CategoryStrategy <|.. MechanicsStrategy
+  CategoryStrategy <|.. WorldLevelStrategy
+  CategoryStrategy <|.. StoryStrategy
+  CategoryStrategy <|.. UIStrategy
+  CategoryStrategy <|.. SystemsStrategy
+  CategoryStrategy <|.. UncategorizedStrategy
+              </pre>
+              <p class="caption">Shows how category logic can expand without rewriting the main categorizer.</p>
+            </article>
+
+            <article class="diagram-panel">
+              <h3>Chunk Lifecycle</h3>
+              <pre class="mermaid">
+stateDiagram-v2
+  [*] --> Loaded
+  Loaded --> Chunked
+  Chunked --> SubmittedToModel
+  SubmittedToModel --> Verified
+  SubmittedToModel --> FallbackNeeded
+  FallbackNeeded --> Verified
+  Verified --> Categorized
+  Categorized --> AddedToProductionMap
+  AddedToProductionMap --> [*]
+              </pre>
+              <p class="caption">Shows how a raw text chunk becomes useful production-map material.</p>
+            </article>
+
+            <article class="diagram-panel">
+              <h3>Production Map Assembly</h3>
+              <pre class="mermaid">
+flowchart TD
+  A[Design Document] --> B[Load Text]
+  B --> C[Chunk Content]
+  C --> D[Summarize Locally]
+  D --> E{Response Valid?}
+  E -->|Yes| F[Categorize]
+  E -->|No| G[Fallback Summary]
+  G --> F
+  F --> H[Group By Production Category]
+  H --> I[Write Markdown Production Map]
+  I --> J[Reviewable Planning Artifact]
+              </pre>
+              <p class="caption">Shows the product-level transformation from raw design text to an organized planning artifact.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Original Diagram Evidence</h2>
+          <div class="grid two">
+            <figure>
+              <img class="media pad" src="sequence_diagram_categorization_pipeline.svg" alt="Original sequence diagram export">
+              <figcaption class="caption">Original sequence diagram export.</figcaption>
+            </figure>
+            <figure>
+              <img class="media pad" src="state_chart_chunk_classification.svg" alt="Original state chart export">
+              <figcaption class="caption">Original state chart export.</figcaption>
+            </figure>
+            <figure>
+              <img class="media" src="assets/strategy-pattern-diagram.png" alt="Strategy Pattern diagram export">
+              <figcaption class="caption">Strategy Pattern export selected as the strongest screenshot-style UML asset.</figcaption>
+            </figure>
+            <figure>
+              <img class="media" src="assets/use-case-diagram-original.png" alt="Original use case diagram export">
+              <figcaption class="caption">Original use-case diagram export retained as supporting process evidence.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Supporting Archive</h2>
+          <p class="muted">These exports are retained so the project history is visible, but they are not the primary presentation diagrams.</p>
+          <div class="grid three" style="margin-top: 18px;">
+            <img class="media" src="assets/strategy-pattern-drawio-export.png" alt="Additional Strategy Pattern draw.io export">
+            <img class="media" src="assets/strategy-pattern-v2-export.png" alt="Additional Strategy Pattern v2 export">
+            <img class="media" src="assets/strategy-pattern-matthew-export.png" alt="Additional Strategy Pattern Matthew export">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">Built by Matthew Mitchell - MMKPC Studios</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: "default", securityLevel: "loose" });
+    </script>
+    <script src="site.js"></script>
+  </body>
+</html>

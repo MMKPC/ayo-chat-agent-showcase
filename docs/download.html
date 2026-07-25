@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download Demo | AYO Chat Agent v1</title>
+    <meta name="description" content="Download and test the AYO Chat Agent v1 Windows desktop demo package with Ollama and Phi-3.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <div class="brand">AYO Chat Agent v1</div>
+        <nav class="nav-links" aria-label="Portfolio links">
+          <a href="index.html">Overview</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="diagrams.html">Diagrams</a>
+          <a href="video-evidence.html">Videos</a>
+          <a href="download.html">Download Demo</a>
+          <a href="demo-script.html">Demo Script</a>
+          <a href="mailto:memitchell@mmkpcstudios.com?subject=AYO%20Chat%20Agent%20source%20review">Source Review</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Controlled demo package</p>
+          <h1>Test the working EXE without downloading the source code.</h1>
+          <p class="lead">The public package gives reviewers a Windows desktop build, a sample design document, and setup instructions for Ollama/Phi-3. The source stays private unless a technical reviewer requests access.</p>
+          <div class="actions">
+            <a class="button primary" href="downloads/ayo-chat-agent-v1-demo.zip">Download ZIP Demo</a>
+            <a class="button" href="https://matteo.mmkpcstudios.com/#/">Try Matteo Live</a>
+            <a class="button" href="video-evidence.html">Watch Proof Videos</a>
+            <a class="button" href="mailto:memitchell@mmkpcstudios.com?subject=AYO%20Chat%20Agent%20source%20review">Request Source Review</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap grid two">
+          <article class="card">
+            <h2>Prefer No Setup?</h2>
+            <p>If you want to see the same gated AI design in a browser instead of on a local machine, Matteo is the hosted product companion to this demo.</p>
+            <p><a href="https://matteo.mmkpcstudios.com/#/">Open Matteo live</a></p>
+          </article>
+          <article class="card">
+            <h2>Use AYO For</h2>
+            <p>Local packaged proof, document-to-production-map workflow, and evaluator-friendly software evidence.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap grid two">
+          <article class="card">
+            <h2>What You Get</h2>
+            <ul class="proof-list">
+              <li><strong>ayo.exe</strong>, a Windows executable build with a simple desktop interface.</li>
+              <li><strong>sample_doc.txt</strong>, a small game-design input document.</li>
+              <li><strong>AYO_DEMO_README.txt</strong>, a plain setup and test guide.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h2>Package Check</h2>
+            <dl class="download-meta">
+              <div>
+                <dt>File</dt>
+                <dd>ayo-chat-agent-v1-demo.zip</dd>
+              </div>
+              <div>
+                <dt>Version</dt>
+                <dd>AYO Chat Agent v1 demo package</dd>
+              </div>
+              <div>
+                <dt>Size</dt>
+                <dd>34.27 MB</dd>
+              </div>
+              <div>
+                <dt>SHA-256</dt>
+                <dd><code data-download-sha>2551D5728ADAAC25E0ABA51FDFF3E9FF5B16080CD4ECB139C275E9AC3DA9C462</code></dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Setup</h2>
+          <div class="grid three">
+            <article class="card">
+              <h3>1. Install Ollama</h3>
+              <p>Install Ollama from the official download page, then make sure it is running before launching the demo.</p>
+              <p><a href="https://ollama.com/download">Open Ollama download</a></p>
+            </article>
+            <article class="card">
+              <h3>2. Pull Phi-3</h3>
+              <p>Open PowerShell or Terminal and download the model used by this demo.</p>
+              <pre class="chapter-block">ollama pull phi3</pre>
+            </article>
+            <article class="card">
+              <h3>3. Open AYO</h3>
+              <p>Unzip the demo package, launch <code>ayo.exe</code>, load the bundled sample if needed, and click <code>Generate Map</code>.</p>
+              <pre class="chapter-block">Double-click ayo.exe</pre>
+              <p class="caption">First load may take a little longer while Ollama starts and the local model wakes up.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap grid two">
+          <article>
+            <h2>Successful Run</h2>
+            <p class="muted">A successful test loads the source note into the left panel and generates a Markdown production map in the right panel with sections for Characters, World and Lore, Abilities, Story, and Uncategorized Review.</p>
+            <pre class="chapter-block"># Production Map
+
+## Characters
+- ...
+
+## World and Lore
+- ...
+
+## Abilities
+- ...
+
+## Story
+- ...
+
+## Uncategorized Review
+- ...</pre>
+          </article>
+          <article>
+            <h2>Useful Reviewer Checks</h2>
+            <pre class="chapter-block">ollama list
+Double-click ayo.exe
+Click Save Output to export production_map.md</pre>
+            <p class="caption">The app keeps the workflow simple: open the sample, generate the map, then save the Markdown output if you want a file copy.</p>
+            <p class="caption">If the demo says it cannot connect to Ollama, open Ollama first, wait a few seconds, then click <code>Generate Map</code> again.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Source Boundary</h2>
+          <div class="grid two">
+            <article class="card">
+              <h3>Public</h3>
+              <p>Case study, diagrams, videos, demo script, setup guide, and Windows test package.</p>
+            </article>
+            <article class="card">
+              <h3>Controlled</h3>
+              <p>Full source code, implementation details, and private development context are available only for a focused technical review.</p>
+            </article>
+          </div>
+          <p class="caption">Windows may show a security confirmation because the demo EXE is unsigned. Only run the file if it was downloaded from this AYO portfolio page.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">Built by Matthew Mitchell - MMKPC Studios</div>
+    </footer>
+    <script src="site.js"></script>
+  </body>
+</html>

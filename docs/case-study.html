@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Study | AYO Chat Agent v1</title>
+    <meta name="description" content="Case study for AYO Chat Agent v1, a local AI-assisted desktop tool for game design planning.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <div class="brand">AYO Chat Agent v1</div>
+        <nav class="nav-links" aria-label="Portfolio links">
+          <a href="index.html">Overview</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="diagrams.html">Diagrams</a>
+          <a href="video-evidence.html">Videos</a>
+          <a href="download.html">Download Demo</a>
+          <a href="demo-script.html">Demo Script</a>
+          <a href="mailto:memitchell@mmkpcstudios.com?subject=AYO%20Chat%20Agent%20source%20review">Source Review</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Case study</p>
+          <h1>From design document to structured production map.</h1>
+          <p class="lead">AYO Chat Agent v1 demonstrates how local AI can support game design planning without turning the whole workflow into an uncontrolled prompt experiment.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap grid two">
+          <article>
+            <h2>Problem</h2>
+            <p class="muted">Game design documents often contain mechanics, story, UI notes, worldbuilding, systems, and production concerns in the same long document. A developer or small team can lose time manually pulling those details into actionable categories.</p>
+          </article>
+          <article>
+            <h2>Solution</h2>
+            <p class="muted">AYO loads design text, splits it into manageable chunks, sends controlled prompts to a local AI model, checks responses for obvious failure conditions, assigns useful categories, and writes a production map.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap grid two">
+          <article class="card">
+            <h2>Local Proof</h2>
+            <p>AYO is the packaged desktop demonstration of the workflow. It proves the loader, chunker, verifier, categorizer, and output assembly in a reviewer-testable local environment.</p>
+            <p><a href="download.html">Open the download page</a></p>
+          </article>
+          <article class="card">
+            <h2>Hosted Proof</h2>
+            <p>Matteo is the hosted companion example. It shows the same constrained-model mindset expressed as a live browser product with a clear behavioral contract.</p>
+            <p><a href="https://matteo.mmkpcstudios.com/#/">Open Matteo live</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>System Components</h2>
+          <div class="grid three">
+            <article class="card">
+              <h3>Loader</h3>
+              <p>Reads input from a selected text file or command-line argument and normalizes the text for processing.</p>
+            </article>
+            <article class="card">
+              <h3>Chunker</h3>
+              <p>Splits long design content into smaller sections so local model calls stay manageable.</p>
+            </article>
+            <article class="card">
+              <h3>AI Provider</h3>
+              <p>Routes prompt text into a local Ollama and Phi-3 workflow.</p>
+            </article>
+            <article class="card">
+              <h3>Verifier</h3>
+              <p>Rejects blank, too-short, and error-like generated responses before they are accepted.</p>
+            </article>
+            <article class="card">
+              <h3>Categorizer</h3>
+              <p>Uses Strategy Pattern logic to assign chunks into production categories.</p>
+            </article>
+            <article class="card">
+              <h3>Production Map</h3>
+              <p>Assembles categorized content into a structured Markdown planning document.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap grid two">
+          <article>
+            <h2>Technical Stack</h2>
+            <ul class="proof-list">
+              <li>Python desktop app with shared pipeline logic</li>
+              <li>Ollama and Phi-3 local model workflow</li>
+              <li>pytest test suite</li>
+              <li>Windows EXE demo package</li>
+              <li>UML architecture documentation</li>
+              <li>Markdown production-map output</li>
+            </ul>
+          </article>
+          <article>
+            <h2>Verification</h2>
+            <p class="muted">The test suite covers loader behavior, chunking behavior, response verification, categorization, production-map assembly, and integration-level workflow behavior.</p>
+            <p><strong>Current verification:</strong> 28 tests passing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Why It Matters</h2>
+          <p class="muted">This project demonstrates more than prompt usage. It shows a controlled technical workflow where local AI, software architecture, testing, and game production thinking work together. That supports technical design, AI tooling, developer tools, production systems, and teaching-oriented roles.</p>
+          <div class="actions">
+            <a class="button primary" href="diagrams.html">View Diagrams</a>
+            <a class="button" href="video-evidence.html">View Videos</a>
+            <a class="button" href="download.html">Download Demo</a>
+            <a class="button" href="https://matteo.mmkpcstudios.com/#/">Try Matteo Live</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">Built by Matthew Mitchell - MMKPC Studios</div>
+    </footer>
+    <script src="site.js"></script>
+  </body>
+</html>
