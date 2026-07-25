@@ -20,9 +20,9 @@ AYO Chat Agent v1 is a local AI-assisted desktop tool that turns rough game desi
 
 ## Reviewer links
 
-- Portfolio site: `GitHub Pages will be enabled on this repository`
-- Demo download: `See the Download Demo page on the site`
-- Source review request: `Available by direct request`
+- Portfolio site: https://mmkpc.github.io/ayo-chat-agent-showcase/
+- Demo download: https://mmkpc.github.io/ayo-chat-agent-showcase/download.html
+- Source review request: Available by direct request
 
 ## Boundary
 
